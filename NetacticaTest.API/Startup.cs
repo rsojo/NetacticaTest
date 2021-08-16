@@ -39,9 +39,7 @@ namespace NetacticaTest.API
             });
             services.AddDbContext<NetacticaTestDbContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("Database")));
             services.AddScoped<IBookingManager, BookingManager>();
-            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
-            //services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
